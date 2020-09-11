@@ -1,4 +1,5 @@
 * {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -45,3 +46,14 @@ header {
     height: 30vh;
     width: auto;
 }
+=======
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 100vh;
+  background: linear-gradient(#83cfd3, #ffffff);
+}
+>>>>>>> 96938b6adf450195e0eb573d073fc488313d158d

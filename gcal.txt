@@ -1,0 +1,4 @@
+Google Calendar API
+Client ID: 207523860993-qv5bri01sch1u6obs6b139mnirqmm6ru.apps.googleusercontent.com
+Client secret: R9Cfpaxq1dyQojhQ_jGDBXuK
+API key: AIzaSyBIGJEGK-AG-6D2GrwB4CA8UmytFSDhSb4

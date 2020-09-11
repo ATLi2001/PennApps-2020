@@ -1,10 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
-    height: 100vh;
-    background: linear-gradient(#83CFD3, #c1d5db);
+  height: 100vh;
+  background: linear-gradient(#83cfd3, #ffffff);
 }

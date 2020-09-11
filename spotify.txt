@@ -1,0 +1,5 @@
+Spotify Email: heped29147@mailetk.com
+Spotify Password: PennApps2020	
+
+Client ID: 78138a96f8be4efb8c281170c6350e39
+Client Secret: 742e4f609ede407baa123d5f777da2a6

@@ -1,5 +1,59 @@
 * {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat';
 }
+
+header {
+    height: 100vh;
+    background: linear-gradient(#83CFD3, #c1d5db);
+}
+
+.central-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wide-card {
+    width: 20vw;
+    height: 10vh;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #c1d5db;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 5px 5px 2px 2px #00000038;
+}
+
+.wide-card * {
+    padding: 10px;
+}
+
+.wide-card img {
+    height: 80%;
+}
+
+#music-wide {
+    height: 30vh;
+    width: auto;
+}
+=======
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 100vh;
+  background: linear-gradient(#83cfd3, #ffffff);
+}
+>>>>>>> 96938b6adf450195e0eb573d073fc488313d158d

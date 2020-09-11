@@ -4,16 +4,35 @@
 <head>
     <title>Google Calendar API Quickstart</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 
 <body>
-    <p>Google Calendar API Quickstart</p>
+    <header>
+        <div class="central-container">
 
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize_button" style="display: none">Authorize</button>
-    <button id="signout_button" style="display: none">Sign Out</button>
+            <img id="music-wide" src="./assets/music-wide.svg" alt="">
+            <div class="wide-card">
+                <img src="./assets/spotify-logo.svg" alt="">
+                <h3>Login to Spotify</h3>
+            </div>
+            <div id="authorize_button" style="display: flex" class="wide-card">
+                <img src="./assets/google-logo.png" alt="">
+                <h3>Login to Google</h3>
+                <!--Add buttons to initiate auth sequence and sign out-->
+                <!-- <button id="authorize_button" style="display: none">Authorize</button> -->
 
-    <pre id="content" style="white-space: pre-wrap"></pre>
+            </div>
+            <pre id="content" style="white-space: pre-wrap"></pre>
+            <button id="signout_button" style="display: none">Sign Out</button>
+        </div>
+
+
+
+    </header>
+
+
 
     <script type="text/javascript">
         // Client ID and API key from the Developer Console
@@ -76,11 +95,11 @@
          */
         function updateSigninStatus(isSignedIn) {
             if (isSignedIn) {
-                authorizeButton.style.display = "none";
+                // authorizeButton.style.display = "flex";
                 signoutButton.style.display = "block";
                 listUpcomingEvents();
             } else {
-                authorizeButton.style.display = "block";
+                // authorizeButton.style.display = "block";
                 signoutButton.style.display = "none";
             }
         }

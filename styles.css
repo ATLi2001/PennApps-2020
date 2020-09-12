@@ -11,13 +11,15 @@ header {
 }
 
 .central-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .wide-card {
@@ -31,6 +33,7 @@ header {
   flex-direction: row;
   align-items: center;
   box-shadow: 5px 5px 2px 2px #00000038;
+  cursor: pointer;
 }
 
 .wide-card * {
@@ -41,8 +44,17 @@ header {
   height: 80%;
 }
 
+.wide-card:hover {
+  background-color: lightskyblue;
+}
+
 #music-wide {
   height: 30vh;
+  width: auto;
+}
+
+#music-small {
+  height: 15vh;
   width: auto;
 }
 
@@ -50,8 +62,37 @@ header {
   width: 10vw;
   height: 5vw;
   margin: 15px;
+  display: flex;
   border-radius: 10px;
   background-color: #c1d5db;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   box-shadow: 5px 5px 2px 2px #00000038;
+}
+
+#signout_button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 5vw;
+  height: 2vw;
+  border-radius: 10px;
+  border-width: 0px;
+  background-color: #c1d5db;
+  box-shadow: 5px 5px 2px 2px #00000038;
+  cursor: pointer;
+}
+
+#signout_button:hover {
+  background-color: lightskyblue;
+}
+
+.list-header {
+  width: 10vw;
+  height: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

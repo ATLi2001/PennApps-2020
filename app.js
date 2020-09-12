@@ -56,6 +56,7 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     signoutButton.style.display = "block";
     listUpcomingEvents();
+    listPlaylists();
   } else {
     signoutButton.style.display = "none";
   }
@@ -82,13 +83,20 @@ function handleSignoutClick(event) {
  *
  * @param {string} message Text to be placed in pre element.
  */
-function appendEvents(message) {
+function appendEvents(message, index) {
+  // div is where content will go
   var div = document.getElementById("content");
-  var p = document.createElement("p");
-  p.className = "event-card";
+  // inner div is card to contain event text
+  var innerDiv = document.createElement("div");
+  innerDiv.className = "event-card";
+  // text of the event
+  var text = document.createElement("h4");
   var textContent = document.createTextNode(message);
-  p.appendChild(textContent);
-  div.appendChild(p);
+  text.appendChild(textContent);
+  // have the even be identifiable
+  text.setAttribute("id", `event${index}`);
+  innerDiv.appendChild(text);
+  div.appendChild(innerDiv);
 }
 
 /**
@@ -116,10 +124,36 @@ function listUpcomingEvents() {
           if (!when) {
             when = event.start.date;
           }
-          appendEvents(event.summary + " (" + when + ")");
+          // keep only the date
+          when = when.substring(0, 10);
+          appendEvents(event.summary + "\n" + when, i);
         }
       } else {
-        appendEvents("No upcoming events found.");
+        appendEvents("No upcoming events found.", -1);
       }
     });
+}
+
+function listPlaylists() {
+  if (document.getElementById("event0") !== null) {
+    var playlistDiv = document.getElementById("playlists");
+    for (i = 0; i < 5; i++) {
+      var eventId = `event${i}`;
+      var currEvent = document.getElementById(eventId).innerText;
+      // inner div is card to contain event text
+      var innerDiv = document.createElement("div");
+      innerDiv.className = "event-card";
+      // text of the event
+      var text = document.createElement("h4");
+      var textContent = document.createTextNode(currEvent);
+      text.appendChild(textContent);
+      innerDiv.appendChild(text);
+      playlistDiv.appendChild(innerDiv);
+    }
+  } else {
+    // check again for event0
+    setTimeout(function () {
+      listPlaylists();
+    }, 300);
+  }
 }

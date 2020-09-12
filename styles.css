@@ -1,47 +1,59 @@
 * {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
+=======
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+>>>>>>> 1ea42bceaa93f570c69d22c3fb54cafecd0b4c17
 }
 
 header {
-    height: 100vh;
-    background: linear-gradient(#83CFD3, #c1d5db);
+  height: 100vh;
+  background: linear-gradient(#83cfd3, #ffffff);
 }
 
 .central-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .wide-card {
-    width: 20vw;
-    height: 10vh;
-    margin: 15px;
-    border-radius: 10px;
-    background-color: #c1d5db;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    box-shadow: 5px 5px 2px 2px #00000038;
+  width: 20vw;
+  height: 10vh;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: #c1d5db;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 5px 5px 2px 2px #00000038;
 }
 
 .wide-card * {
-    padding: 10px;
+  padding: 10px;
 }
 
 .wide-card img {
-    height: 80%;
+  height: 80%;
 }
 
 #music-wide {
+<<<<<<< HEAD
     height: 30vh;
     width: auto;
+=======
+  height: 30vh;
+  width: auto;
+>>>>>>> 1ea42bceaa93f570c69d22c3fb54cafecd0b4c17
 }

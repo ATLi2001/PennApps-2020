@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Google Calendar API Quickstart</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-</head>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="central-container">
-
-            <img id="music-wide" src="./assets/music-wide.svg" alt="">
-            <div class="wide-card">
-                <img src="./assets/spotify-logo.svg" alt="">
-                <h3>Login to Spotify</h3>
-            </div>
-            <div id="authorize_button" style="display: flex" class="wide-card">
-                <img src="./assets/google-logo.png" alt="">
-                <h3>Login to Google</h3>
-                <!--Add buttons to initiate auth sequence and sign out-->
-                <!-- <button id="authorize_button" style="display: none">Authorize</button> -->
-
-            </div>
-            <pre id="content" style="white-space: pre-wrap"></pre>
-            <button id="signout_button" style="display: none">Sign Out</button>
+      <div class="central-container">
+        <img id="music-wide" src="./assets/music-wide.svg" alt="" />
+        <div class="wide-card">
+          <img src="./assets/spotify-logo.svg" alt="" />
+          <h3>Login to Spotify</h3>
         </div>
-
-
-
+        <div id="authorize_button" style="display: flex" class="wide-card">
+          <img src="./assets/google-logo.png" alt="" />
+          <h3>Login to Google</h3>
+          <!--Add buttons to initiate auth sequence and sign out-->
+          <!-- <button id="authorize_button" style="display: none">Authorize</button> -->
+        </div>
+        <pre id="content" style="white-space: pre-wrap"></pre>
+        <button id="signout_button" style="display: none">Sign Out</button>
+        <a href="mainscreen.html">mainscreen</a>
+      </div>
     </header>
 
+<<<<<<< HEAD
 
     <script type="text/javascript">
         // Client ID and API key from the Developer Console
@@ -169,3 +168,16 @@
 </body>
 
 </html>
+=======
+    <script type="text/javascript" src="app.js"></script>
+
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"
+    ></script>
+  </body>
+</html>
+>>>>>>> 1ea42bceaa93f570c69d22c3fb54cafecd0b4c17

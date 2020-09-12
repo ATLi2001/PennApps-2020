@@ -33,6 +33,19 @@ const _getPlaylistByGenre = async (token, genreId) => {
     console.log(data.playlists.items);
 }
 
+const _getTracks = async (token, tracksEndPoint) => {
+
+    const limit = 10;
+
+    const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
+        method: 'GET',
+        headers: { 'Authorization' : 'Bearer ' + token}
+    });
+
+    const data = await result.json();
+    return data.items;
+} 
+
 async function main() {
     let token = await _getToken();
     await _getPlaylistByGenre(token, "workout");

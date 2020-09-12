@@ -12,7 +12,6 @@ var DISCOVERY_DOCS = [
 // included, separated by spaces.
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
-var authorizeButton = document.getElementById("authorize_button");
 var signoutButton = document.getElementById("signout_button");
 
 /**
@@ -41,7 +40,6 @@ function initClient() {
 
         // Handle the initial sign-in state.
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        authorizeButton.onclick = handleAuthClick;
         signoutButton.onclick = handleSignoutClick;
       },
       function (error) {
@@ -56,13 +54,10 @@ function initClient() {
  */
 function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
-    // authorizeButton.style.display = "flex";
     signoutButton.style.display = "block";
     listUpcomingEvents();
   } else {
-    // authorizeButton.style.display = "block";
     signoutButton.style.display = "none";
-    location.replace("index.html");
   }
 }
 
@@ -78,6 +73,7 @@ function handleAuthClick(event) {
  */
 function handleSignoutClick(event) {
   gapi.auth2.getAuthInstance().signOut();
+  location.replace("index.html");
 }
 
 /**

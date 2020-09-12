@@ -12,6 +12,29 @@ var DISCOVERY_DOCS = [
 // included, separated by spaces.
 var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
 
+const spotify = [
+  { val: "chill", URI: "spotify:playlist:37i9dQZF1DX4WYpdgoIcn6" },
+  { val: "rnb", URI: "spotify:playlist:37i9dQZF1DWYmmr74INQlb" },
+  { val: "mood", URI: "spotify:playlist:37i9dQZF1DX3rxVfibe1L0" },
+  { val: "hiphop", URI: "spotify:playlist:37i9dQZF1DX0XUsuxWHRQd" },
+  { val: "pop", URI: "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M" },
+  { val: "at_home", URI: "spotify:playlist:37i9dQZF1DWTLSN7iG21yC" },
+  { val: "dinner", URI: "spotify:playlist:37i9dQZF1DX4xuWVBs4FgJ" },
+  { val: "decades", URI: "spotify:playlist:37i9dQZF1DX4UtSsGT1Sbe" },
+  { val: "jazz", URI: "spotify:playlist:37i9dQZF1DXbITWG1ZJKYt" },
+  { val: "rock", URI: "spotify:playlist:37i9dQZF1DWXRqgorJj26U" },
+  { val: "workout", URI: "spotify:playlist:37i9dQZF1DX76Wlfdnj7AP" },
+  { val: "edm_dance", URI: "spotify:playlist:37i9dQZF1DX4dyzvuaRJ0n" },
+  { val: "romance", URI: "spotify:playlist:37i9dQZF1DWXqpDKK4ed9O" },
+  { val: "party", URI: "spotify:playlist:37i9dQZF1DXaXB8fQg7xif" },
+  { val: "wellness", URI: "spotify:playlist:37i9dQZF1DX9uKNf5jGX6m" },
+  { val: "sleep", URI: "spotify:playlist:37i9dQZF1DWZd79rJ6a7lp" },
+  { val: "toplists", URI: "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M" },
+  { val: "gaming", URI: "spotify:playlist:37i9dQZF1DWTyiBJ6yEqeu" },
+  { val: "focus", URI: "spotify:playlist:37i9dQZF1DX4sWSpwq3LiO" },
+  { val: "metal", URI: "spotify:playlist:37i9dQZF1DWTcqUzwhNmKv" },
+];
+
 var signoutButton = document.getElementById("signout_button");
 
 /**
@@ -143,11 +166,21 @@ function listPlaylists() {
       // inner div is card to contain event text
       var innerDiv = document.createElement("div");
       innerDiv.className = "event-card";
-      // text of the event
-      var text = document.createElement("h4");
-      var textContent = document.createTextNode(currEvent);
-      text.appendChild(textContent);
-      innerDiv.appendChild(text);
+      // iframe of the event
+      var iframe = document.createElement("iframe");
+      // var textContent = document.createTextNode(currEvent);
+      var uri = spotify[0].URI;
+      var embed = uri.split(":")[2];
+      iframe.setAttribute(
+        "src",
+        `https://open.spotify.com/embed/playlist/${embed}`
+      );
+      iframe.style.width = "300px";
+      iframe.style.height = "80px";
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allowtransparency", "true");
+      iframe.setAttribute("allow", "encrypted-media");
+      innerDiv.appendChild(iframe);
       playlistDiv.appendChild(innerDiv);
     }
   } else {

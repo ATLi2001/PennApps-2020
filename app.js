@@ -56,6 +56,7 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     signoutButton.style.display = "block";
     listUpcomingEvents();
+    listPlaylists();
   } else {
     signoutButton.style.display = "none";
   }
@@ -131,4 +132,28 @@ function listUpcomingEvents() {
         appendEvents("No upcoming events found.", -1);
       }
     });
+}
+
+function listPlaylists() {
+  if (document.getElementById("event0") !== null) {
+    var playlistDiv = document.getElementById("playlists");
+    for (i = 0; i < 5; i++) {
+      var eventId = `event${i}`;
+      var currEvent = document.getElementById(eventId).innerText;
+      // inner div is card to contain event text
+      var innerDiv = document.createElement("div");
+      innerDiv.className = "event-card";
+      // text of the event
+      var text = document.createElement("h4");
+      var textContent = document.createTextNode(currEvent);
+      text.appendChild(textContent);
+      innerDiv.appendChild(text);
+      playlistDiv.appendChild(innerDiv);
+    }
+  } else {
+    // check again for event0
+    setTimeout(function () {
+      listPlaylists();
+    }, 300);
+  }
 }

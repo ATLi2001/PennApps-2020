@@ -14,10 +14,22 @@
     <header>
       <div class="central-container">
         <img id="music-small" src="./assets/music-wide.svg" alt="" />
-        <div style="display: flex" class="wide-card">
-          <h3>event cards</h3>
+        <div style="width: 30%">
+          <div style="float: left">
+            <div class="list-header">
+              <img src="./assets/google-logo.png" alt="" style="height: 40%" />
+              <h3 style="margin-left: 10px">Events</h3>
+            </div>
+            <div id="content" style="white-space: pre-wrap"></div>
+          </div>
+          <div style="float: right">
+            <div class="list-header">
+              <img src="./assets/spotify-logo.svg" alt="" style="height: 40%" />
+              <h3 style="margin-left: 10px">Playlists</h3>
+            </div>
+            <div id="playlists"></div>
+          </div>
         </div>
-        <div id="content" style="white-space: pre-wrap"></div>
       </div>
       <button id="signout_button" style="display: none">Sign Out</button>
     </header>

@@ -1,14 +1,8 @@
 const fetch = require("node-fetch");
 var btoa = require('btoa');
-var express = require('express'); // Express web server framework
-var request = require('request'); // "Request" library
-var cors = require('cors');
-var querystring = require('querystring');
-var cookieParser = require('cookie-parser');
 
 const clientId = '78138a96f8be4efb8c281170c6350e39';
 const clientSecret = '742e4f609ede407baa123d5f777da2a6';
-const userID = '06xbtgqsekgeie9m5zz5au179';
 
 
 const _getToken = async () => {
@@ -50,32 +44,6 @@ const _getPlaylistByGenre = async (token, genreId) => {
     return (data.playlists.items);
 }
 
-const _getTracks = async (token, tracksEndPoint) => {
-
-    const limit = 10;
-
-    const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-    });
-
-    const data = await result.json();
-    return data.items;
-}
-
-const grabTracks = async (token, url) => {
-
-    const limit = 10;
-
-    const result = await fetch(url, {
-        method: 'GET',
-        headers: { 'Authorization': 'Bearer ' + token }
-    });
-
-    const data = await result.json();
-    console.log(data.items);
-}
-
 
 async function getembbedURI(genreid) {
     let token = await _getToken();
@@ -83,8 +51,14 @@ async function getembbedURI(genreid) {
     let playlists = await _getPlaylistByGenre(token, genreid);
     return(playlists[0].uri);
     
-
-
 }
 
-let spotifyURI = getembbedURI('workout')
+async function main(genreid) {
+    let playlisturi = await getembbedURI(genreid);
+    return playlisturi;
+}
+
+async function test() {
+    console.log(await main('workout'));
+}
+test();

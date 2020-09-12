@@ -86,10 +86,12 @@ function handleSignoutClick(event) {
  *
  * @param {string} message Text to be placed in pre element.
  */
-function appendPre(message) {
-  var pre = document.getElementById("content");
-  var textContent = document.createTextNode(message + "\n");
-  pre.appendChild(textContent);
+function appendEvents(message) {
+  var div = document.getElementById("content");
+  var p = document.createElement("p");
+  var textContent = document.createTextNode(message);
+  p.appendChild(textContent);
+  div.appendChild(p);
 }
 
 /**
@@ -109,7 +111,7 @@ function listUpcomingEvents() {
     })
     .then(function (response) {
       var events = response.result.items;
-      appendPre("Upcoming events:");
+      appendEvents("Upcoming events:");
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {
@@ -118,10 +120,10 @@ function listUpcomingEvents() {
           if (!when) {
             when = event.start.date;
           }
-          appendPre(event.summary + " (" + when + ")");
+          appendEvents(event.summary + " (" + when + ")");
         }
       } else {
-        appendPre("No upcoming events found.");
+        appendEvents("No upcoming events found.");
       }
     });
 }

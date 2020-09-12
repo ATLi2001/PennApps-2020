@@ -31,6 +31,7 @@ header {
   flex-direction: row;
   align-items: center;
   box-shadow: 5px 5px 2px 2px #00000038;
+  cursor: pointer;
 }
 
 .wide-card * {
@@ -39,6 +40,10 @@ header {
 
 .wide-card img {
   height: 80%;
+}
+
+.wide-card:hover {
+  background-color: lightskyblue;
 }
 
 #music-wide {

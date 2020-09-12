@@ -3,3 +3,4 @@ Spotify Password: PennApps2020
 
 Client ID: 78138a96f8be4efb8c281170c6350e39
 Client Secret: 742e4f609ede407baa123d5f777da2a6
+Token: BQD-fbqtWhffvj0lZRWvydZ_Lnlt4Gsl-R5m-WxGyE6AYxqFMIGZse5_4kDi-pF_omgceEVg1KOPtGSTo644rhT7NohntwplGXzIyvtMwACWNDsecS-CLhMxD_3K8DWYLboQO5J-5oFD9ulfFrkZbDTBauNeSpAkMHTSSdHtSP_RmdJWIw

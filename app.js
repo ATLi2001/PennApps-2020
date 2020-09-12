@@ -84,11 +84,13 @@ function handleSignoutClick(event) {
  */
 function appendEvents(message) {
   var div = document.getElementById("content");
-  var p = document.createElement("p");
-  p.className = "event-card";
+  var innerDiv = document.createElement("div");
+  var text = document.createElement("h4");
+  innerDiv.className = "event-card";
   var textContent = document.createTextNode(message);
-  p.appendChild(textContent);
-  div.appendChild(p);
+  text.appendChild(textContent);
+  innerDiv.appendChild(text);
+  div.appendChild(innerDiv);
 }
 
 /**
@@ -116,7 +118,9 @@ function listUpcomingEvents() {
           if (!when) {
             when = event.start.date;
           }
-          appendEvents(event.summary + " (" + when + ")");
+          // keep only the date
+          when = when.substring(0, 10);
+          appendEvents(event.summary + "\n" + when);
         }
       } else {
         appendEvents("No upcoming events found.");

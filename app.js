@@ -82,13 +82,18 @@ function handleSignoutClick(event) {
  *
  * @param {string} message Text to be placed in pre element.
  */
-function appendEvents(message) {
+function appendEvents(message, index) {
+  // div is where content will go
   var div = document.getElementById("content");
+  // inner div is card to contain event text
   var innerDiv = document.createElement("div");
-  var text = document.createElement("h4");
   innerDiv.className = "event-card";
+  // text of the event
+  var text = document.createElement("h4");
   var textContent = document.createTextNode(message);
   text.appendChild(textContent);
+  // have the even be identifiable
+  text.setAttribute("id", `event${index}`);
   innerDiv.appendChild(text);
   div.appendChild(innerDiv);
 }
@@ -120,10 +125,10 @@ function listUpcomingEvents() {
           }
           // keep only the date
           when = when.substring(0, 10);
-          appendEvents(event.summary + "\n" + when);
+          appendEvents(event.summary + "\n" + when, i);
         }
       } else {
-        appendEvents("No upcoming events found.");
+        appendEvents("No upcoming events found.", -1);
       }
     });
 }

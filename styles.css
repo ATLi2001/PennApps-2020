@@ -46,6 +46,11 @@ header {
   width: auto;
 }
 
+#music-small {
+  height: 15vh;
+  width: auto;
+}
+
 .event-card {
   width: 10vw;
   height: 5vw;

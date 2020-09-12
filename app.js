@@ -85,6 +85,7 @@ function handleSignoutClick(event) {
 function appendEvents(message) {
   var div = document.getElementById("content");
   var p = document.createElement("p");
+  p.className = "event-card";
   var textContent = document.createTextNode(message);
   p.appendChild(textContent);
   div.appendChild(p);
@@ -102,12 +103,11 @@ function listUpcomingEvents() {
       timeMin: new Date().toISOString(),
       showDeleted: false,
       singleEvents: true,
-      maxResults: 10,
+      maxResults: 5,
       orderBy: "startTime",
     })
     .then(function (response) {
       var events = response.result.items;
-      appendEvents("Upcoming events:");
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {

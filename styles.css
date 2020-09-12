@@ -68,3 +68,20 @@ header {
   text-align: center;
   box-shadow: 5px 5px 2px 2px #00000038;
 }
+
+#signout_button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 5vw;
+  height: 2vw;
+  border-radius: 10px;
+  border-width: 0px;
+  background-color: #c1d5db;
+  box-shadow: 5px 5px 2px 2px #00000038;
+  cursor: pointer;
+}
+
+#signout_button:hover {
+  background-color: lightskyblue;
+}

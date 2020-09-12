@@ -1,8 +1,15 @@
 * {
+<<<<<<< HEAD
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+=======
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat";
+>>>>>>> 1ea42bceaa93f570c69d22c3fb54cafecd0b4c17
 }
 
 header {
@@ -42,6 +49,11 @@ header {
 }
 
 #music-wide {
+<<<<<<< HEAD
+    height: 30vh;
+    width: auto;
+=======
   height: 30vh;
   width: auto;
+>>>>>>> 1ea42bceaa93f570c69d22c3fb54cafecd0b4c17
 }

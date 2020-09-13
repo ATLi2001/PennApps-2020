@@ -71,6 +71,17 @@ header {
   box-shadow: 5px 5px 2px 2px #00000038;
 }
 
+.playlist-card {
+  width: 10vw;
+  height: 5vw;
+  margin: 15px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 #signout_button {
   position: absolute;
   left: 20px;

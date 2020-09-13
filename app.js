@@ -180,7 +180,7 @@ async function listPlaylists() {
       }
       // inner div is card to contain event text
       var innerDiv = document.createElement("div");
-      innerDiv.className = "event-card";
+      innerDiv.className = "playlist-card";
       // iframe of the event
       var iframe = document.createElement("iframe");
       // var textContent = document.createTextNode(currEvent);

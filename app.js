@@ -157,19 +157,33 @@ function listUpcomingEvents() {
     });
 }
 
-function listPlaylists() {
+async function listPlaylists() {
   if (document.getElementById("event0") !== null) {
     var playlistDiv = document.getElementById("playlists");
     for (i = 0; i < 5; i++) {
       var eventId = `event${i}`;
+      // format current event for wolfram use
       var currEvent = document.getElementById(eventId).innerText;
+      currEvent = currEvent.substring(0, currEvent.indexOf("2020"));
+      currEvent = currEvent.trim();
+      currEvent = currEvent.toLowerCase();
+      console.log(currEvent);
+      // call wolfram
+      let genre = await wolframGenre(currEvent);
+      console.log("Genre: " + genre);
+      // find in spotify array
+      var uri = spotify[0].URI;
+      for (s = 0; s < spotify.length; s++) {
+        if (spotify[s].val == genre) {
+          uri = spotify[s].URI;
+        }
+      }
       // inner div is card to contain event text
       var innerDiv = document.createElement("div");
       innerDiv.className = "event-card";
       // iframe of the event
       var iframe = document.createElement("iframe");
       // var textContent = document.createTextNode(currEvent);
-      var uri = spotify[0].URI;
       var embed = uri.split(":")[2];
       iframe.setAttribute(
         "src",
@@ -187,6 +201,15 @@ function listPlaylists() {
     // check again for event0
     setTimeout(function () {
       listPlaylists();
-    }, 300);
+    }, 100);
   }
+}
+
+async function wolframGenre(text) {
+  let response = await fetch(
+    `https://www.wolframcloud.com/obj/tmenezes/get-genre?keyword=${text}`
+  );
+
+  let json = await response.json();
+  return json;
 }
